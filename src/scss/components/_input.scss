@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as *;
+
+.input {
+	border: 1px solid $border;
+	border-radius: $input-radius;
+	padding: $form-element-padding;
+	background-color: $input-bg;
+	outline: none;
+	width: 100%;
+
+	&:focus {
+		border-color: $primary;
+		box-shadow: 0 0 0 2px rgba($primary, 0.2);
+		border-color: transparent;
+	}
+}

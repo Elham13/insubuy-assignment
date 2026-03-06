@@ -1,0 +1,203 @@
+@use "../abstracts/variables" as *;
+@use "sass:color";
+
+.left {
+	padding: 1.7rem;
+
+	&__heading {
+		font-size: 1.5rem;
+	}
+
+	&__description {
+		color: $dimmed;
+		margin-top: 1rem;
+		line-height: 160%;
+		letter-spacing: 1%;
+		padding-bottom: 1rem;
+	}
+
+	&__form {
+		margin-top: 1rem;
+		display: flex;
+		flex-direction: column;
+
+		&__group {
+			display: flex;
+			flex-direction: column;
+			row-gap: 0.2rem;
+			margin-bottom: 1rem;
+		}
+
+		&__label {
+			font-size: $small-font;
+			font-weight: 400;
+		}
+
+		&__info {
+			display: flex;
+			justify-content: flex-end;
+		}
+
+		&__link {
+			font-weight: 400;
+			font-size: $small-font;
+		}
+
+		&__button {
+			font-weight: 400;
+			margin-top: 1rem;
+
+			&:focus-visible {
+				outline: 2px solid $primary;
+				outline-offset: 2px;
+			}
+
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+	}
+
+	&__sso {
+		padding-top: 1.5rem;
+
+		&__separator__wrapper {
+			display: flex;
+			align-items: center;
+			column-gap: 0.5rem;
+		}
+
+		&__label {
+			text-align: center;
+			font-weight: 400;
+			font-size: $small-font;
+			color: $text-gray;
+		}
+
+		&__separator {
+			background-color: $separator-bg;
+			height: 0.1rem;
+			flex-grow: 1;
+		}
+
+		&__wrapper {
+			margin-top: 1rem;
+			display: flex;
+			column-gap: 1rem;
+		}
+
+		&__button {
+			flex-grow: 1;
+			font-weight: 400;
+
+			img {
+				height: 1.5rem;
+				width: 1.5rem;
+			}
+
+			&:hover {
+				background-color: color.adjust($sso-bg, $lightness: -5%);
+			}
+		}
+	}
+
+	&__signup {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		column-gap: 0.5rem;
+		padding-top: 1rem;
+
+		p {
+			color: $text-secondary;
+		}
+	}
+
+	.footer {
+		margin-top: 1rem;
+
+		p {
+			color: $text-copyright;
+			text-transform: capitalize;
+			text-align: center;
+			font-size: $small-font;
+		}
+	}
+}
+
+.right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-height: 12.5rem;
+	overflow: hidden;
+
+	img {
+		max-width: 100vw;
+		height: 13.75rem;
+		margin-top: 5rem;
+		object-fit: contain;
+	}
+}
+
+// Tablet
+@media (min-width: 768px) {
+	.container {
+		flex-direction: row;
+
+		.right {
+			max-height: 100vh;
+			height: 100vh;
+
+			img {
+				max-width: 100%;
+				height: auto;
+				max-height: 90vh;
+				margin-top: unset;
+			}
+		}
+
+		.left {
+			padding: 4rem 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			row-gap: 0.5rem;
+
+			&__heading,
+			&__description,
+			&__form,
+			&__sso,
+			&__signup,
+			.footer {
+				width: 65%;
+			}
+
+			&__sso {
+				&__wrapper {
+					flex-direction: column;
+					row-gap: 1rem;
+				}
+			}
+		}
+	}
+}
+
+// Desktop
+@media (min-width: 1024px) {
+	.container {
+		row-gap: 1rem;
+
+		.left {
+			&__heading,
+			&__description,
+			&__form,
+			&__sso,
+			&__signup,
+			.footer {
+				width: 55%;
+			}
+		}
+	}
+}

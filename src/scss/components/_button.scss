@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as *;
+
+.button {
+	border-radius: $button-radius;
+	padding: $form-element-padding;
+}
+
+.button--primary {
+	background-color: $primary;
+	color: white;
+}
+
+.button--sso {
+	background-color: $sso-bg;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.5rem;
+	color: $text-secondary;
+}

@@ -1,3 +1,13 @@
-$input-radius: 0.5rem;
-$button-radius: 0.8rem;
-$form-element-padding: 0.8rem;
+@use "../abstracts/variables" as *;
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: Roboto, "Segoe UI", sans-serif;
+}
+
+a {
+	color: $link;
+}

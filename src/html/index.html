@@ -8,8 +8,8 @@
 	</head>
 	<body>
 		<main class="container">
-			<section class="left">
-				<h1 class="left__heading">Welcome Back</h1>
+			<section class="left" aria-labelledby="login-title">
+				<h1 id="login-title" class="left__heading">Welcome Back</h1>
 				<p class="left__description">
 					Our MyAccount App allows you to access and manage your insurance information
 					24/7.
@@ -17,44 +17,52 @@
 
 				<form class="left__form">
 					<div class="left__form__group">
-						<label class="left__form__label">Email</label>
+						<label for="email" class="left__form__label">Email</label>
 						<input
+							id="email"
 							type="email"
 							placeholder="Example@email.com"
-							class="left__form__input"
+							class="input left__form__input"
+							required
+							autocomplete="email"
 						/>
 					</div>
 
 					<div class="left__form__group">
-						<label class="left__form__label">Password</label>
+						<label for="password" class="left__form__label">Password</label>
 						<input
+							id="password"
 							type="password"
 							placeholder="At least 8 characters"
-							class="left__form__input"
+							class="input left__form__input"
+							required
+							autocomplete="current-password"
 						/>
 					</div>
 
 					<div class="left__form__info">
-						<a href="#" class="left_form_link">Forgot Password?</a>
+						<a href="#" class="left__form__link">Forgot Password?</a>
 					</div>
 
-					<button class="left__form__button">Sign In</button>
+					<button type="submit" class="button button--primary left__form__button">
+						Sign In
+					</button>
 				</form>
 
 				<div class="left__sso">
 					<div class="left__sso__separator__wrapper">
 						<div class="left__sso__separator"></div>
-						<p class="left__sso_label">Or sign in with</p>
+						<p class="left__sso__label">Or sign in with</p>
 						<div class="left__sso__separator"></div>
 					</div>
 
-					<div class="left__sso_wrapper">
-						<button class="left__sso_button">
-							<img src="/src/assets/images/Google.svg" />
+					<div class="left__sso__wrapper">
+						<button class="button button--sso left__sso__button">
+							<img src="/src/assets/images/Google.svg" alt="Google logo" />
 							<span>Google</span>
 						</button>
-						<button class="left__sso_button">
-							<img src="/src/assets/images/Facebook.svg" />
+						<button class="button button--sso left__sso__button">
+							<img src="/src/assets/images/Facebook.svg" alt="Facebook logo" />
 							<span>Facebook</span>
 						</button>
 					</div>
@@ -70,7 +78,10 @@
 				</footer>
 			</section>
 			<section class="right">
-				<img src="/src/assets/images/home-banner.svg" />
+				<img
+					src="/src/assets/images/home-banner.svg"
+					alt="Insurance management dashboard illustration"
+				/>
 			</section>
 		</main>
 	</body>

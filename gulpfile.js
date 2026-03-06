@@ -1,8 +1,13 @@
 const { src, dest, watch, series } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
 
 function buildStyles() {
-	return src("src/scss/**/*.scss").pipe(sass()).pipe(dest("dist"));
+	return src("src/scss/main.scss")
+		.pipe(sass({ outputStyle: "compressed" }))
+		.pipe(postcss([autoprefixer()]))
+		.pipe(dest("dist"));
 }
 
 function watchTask() {

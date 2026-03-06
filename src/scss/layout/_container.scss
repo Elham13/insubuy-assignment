@@ -1,0 +1,11 @@
+.container {
+	display: flex;
+	flex-direction: column-reverse;
+	max-width: 1200px;
+	margin: auto;
+
+	.left,
+	.right {
+		flex-grow: 1;
+	}
+}

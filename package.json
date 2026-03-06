@@ -1,17 +1,21 @@
 {
-  "name": "insubuy-assignment",
-  "version": "1.0.0",
-  "description": "Responsive mobile first login page",
-  "license": "ISC",
-  "author": "Elhamuddin Mahmoodi",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "gulp": "^5.0.1",
-    "gulp-sass": "^6.0.1",
-    "sass": "^1.97.3"
-  }
+	"name": "insubuy-assignment",
+	"version": "1.0.0",
+	"description": "Responsive mobile first login page",
+	"license": "ISC",
+	"author": "Elhamuddin Mahmoodi",
+	"type": "commonjs",
+	"main": "index.js",
+	"scripts": {
+		"start": "gulp"
+	},
+	"devDependencies": {
+		"gulp": "^5.0.1",
+		"gulp-sass": "^6.0.1",
+		"sass": "^1.97.3"
+	},
+	"dependencies": {
+		"autoprefixer": "^10.4.27",
+		"gulp-postcss": "^10.0.0"
+	}
 }
