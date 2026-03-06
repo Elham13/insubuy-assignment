@@ -1,5 +1,15 @@
-const password = document.querySelector("#password");
+const form = document.querySelector(".left__form");
 
-password.addEventListener("focus", () => {
-	password.style.borderColor = "#4f46e5";
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
+
+	const emailInput = form.querySelector("#email");
+	const passwordInput = form.querySelector("#password");
+
+	const email = emailInput.value;
+	const password = passwordInput.value;
+
+	alert(`Form submitted, Email: ${email}, Password: ${password}`);
+
+	form.reset();
 });

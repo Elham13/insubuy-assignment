@@ -1,5 +1,6 @@
 @use "../abstracts/variables" as *;
-@use "sass:color";
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
 
 .left {
 	padding: 1.7rem;
@@ -52,9 +53,7 @@
 				outline-offset: 2px;
 			}
 
-			&:hover {
-				opacity: 0.9;
-			}
+			@include button-hover;
 		}
 	}
 
@@ -96,7 +95,7 @@
 			}
 
 			&:hover {
-				background-color: color.adjust($sso-bg, $lightness: -5%);
+				background-color: darken-color($sso-bg, 5%);
 			}
 		}
 	}
@@ -126,9 +125,7 @@
 }
 
 .right {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	@include flex-center;
 	max-height: 12.5rem;
 	overflow: hidden;
 
@@ -141,7 +138,7 @@
 }
 
 // Tablet
-@media (min-width: 768px) {
+@include respond(tablet) {
 	.container {
 		flex-direction: row;
 
@@ -185,7 +182,7 @@
 }
 
 // Desktop
-@media (min-width: 1024px) {
+@include respond(desktop) {
 	.container {
 		row-gap: 1rem;
 
