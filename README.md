@@ -17,5 +17,5 @@
 
 ## Run project
 
-npm install
-gulp
+`npm install`
+`npm start`
